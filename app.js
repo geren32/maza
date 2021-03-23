@@ -86,6 +86,10 @@ app.post('/login', async (req,res) => {
         }
 
     })
+    if (!user) {
+        res.end('user not exist')
+    }
+
 
 
     //console.log(user)
