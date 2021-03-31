@@ -25,6 +25,7 @@ module.exports = {
 
     },
     getAllArticles: async (req,res) => {
-        res = req.post('http://api' , auch=auch, data=data, headers={"Accept": "application/json"})
+        let articles = Articles.findAll()
+        res.json(articles)
     }
 }

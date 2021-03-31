@@ -5,8 +5,7 @@ const {getAllArticles} = require('../controllers/article')
 
 router.post ('/createArticle',CreatePost);
 
-let articles = Articles.findAll()
-res.json(articles)
+router.post('/getAllArticles',getAllArticles)
 
 
 module.exports = router;
