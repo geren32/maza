@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const DataBase = require('../connection')
 
+
 const article = DataBase.define('article', {
 
     ID: {
@@ -18,8 +19,14 @@ const article = DataBase.define('article', {
         foreignKey:true,
         allowNull: false,
     }
-}, {
+
+},
+    {
     tableName: 'article',
     timestamps: false
 });
+
+// article.beforeSync(() => console.log('b4 creating the article table'))
+// article.afterSync(() => console.log('b4 creating the article table'))
+
 module.exports = article;

@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const DataBase = require('../connection')
+ const article = require('../models/articleSchema')
 
     const User = DataBase.define('users', {
 
@@ -21,13 +22,25 @@ const DataBase = require('../connection')
             type: {
                 type: Sequelize.STRING,
                 allowNull: false
+            },
+            name: {
+                type:Sequelize.STRING,
+                allowNull:false
             }
         }, {
             tableName: 'users',
             timestamps: false
         });
-    module.exports = User;
+
+article.belongsTo(User,{foreignKey: 'UserID'});
+User.hasMany(article, {foreignKey: 'UserID'});
 
 
+// User.beforeSync(() => console.log('b4 creating the article table'))
+// User.afterSync(() => console.log('b4 creating the article table'))
+// User.hasMany(article,{foreignKey:UserID});
+
+
+module.exports = User;
 
 

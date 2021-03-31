@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+    <h1>Hello {{UserName}}</h1>
+    <h1>ID: {{id}} </h1>
+
+</head>
+<body>
+<form action="/article/createArticle" method="post" >
+    <input type="hidden" name="UserID" id="UserID" value="{{id}}">
+    <b>Tell us about your work</b>
+    <input  name="article" >
+    <button type="submit">publish</button>
+    <h1>Your Work:{{this.name}}</h1>
+</form>
+{{#each articles}}
+    {{name}}
+{{/each}}
+
+<script>
+
+</script>
+</body>
+</html>
