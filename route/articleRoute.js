@@ -8,4 +8,5 @@ router.post ('/createArticle',CreatePost);
 router.post('/getAllArticles',getAllArticles)
 
 
+
 module.exports = router;

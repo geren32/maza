@@ -25,7 +25,7 @@ module.exports = {
 
     },
     getAllArticles: async (req,res) => {
-        let articles = Articles.findAll()
-        res.json(articles)
+        let Articles = article.findAll()
+        res.json(Articles)
     }
 }

@@ -14,10 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  app.get('/',function (req, res)  {
      res.render('index');
  });
-
-
-app.post
-app.get
+ 
 const user = require('./route/personRoute')
 const article = require('./route/articleRoute')
 
