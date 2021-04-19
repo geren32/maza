@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
-    <h1>Hello {{UserName}}</h1>
-    <h1>ID: {{UserID}} </h1>
+    <link rel="stylesheet" href="../css/style.css" type="text/css"/>
 </head>
 <body>
+<form class="box" action="/auth/createAdmin" method="POST">
+    <h1><p>Hello {{UserName}}</p></h1>
+    <h1><p>ID: {{id}} </p></h1>
+    <h1><p>Create New Admin</p></h1>
+    <p><label>Admin Name</label></p>
+    <a> <input name="name"> </a>
+    <p><label>login</label></p>
+    <a> <input name="login"> </a>
+    <p><label>password</label></p>
+    <a><input name="password"></a>
+    <button class="floating-button" type="submit">register admin</button>
+</form>
+<a class="floating-button" href="/">Log Out</a>
 </body>
 </html>

@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>User</title>
-    <h1>Hello {{UserName}}</h1>
-    <h1>ID: {{id}} </h1>
 
+    <link rel="stylesheet" href="../css/style.css" type="text/css"/>
 </head>
 <body>
-<form action="/article/createArticle" method="post" >
-    <input type="hidden" name="UserID" id="UserID" value="{{id}}">
-    <b>Tell us about your work</b>
-    <input  name="article" >
-    <button type="submit">publish</button>
-    <h1>Your Work:{{this.name}}</h1>
+<form class="box" action="/article/createArticle" method="post" >
+    <h1><p>Hello {{UserName}}</p></h1>
+    <h1><p>ID: {{id}} </p></h1>
+    <a><input type="hidden" name="UserID" id="UserID" value="{{id}}"></a>
+    <p>Tell us about your work</p>
+    <a><input  name="article" ></a>
+    <button class="floating-button" type="submit">publish</button>
 </form>
-{{#each articles}}
-    {{name}}
-{{/each}}
+<a class="floating-button" href="/">Log Out</a>
+<form class="box2">
+    <p>Your Work:{{this.name}}</p>
+    {{#each articles}}
+        <p> {{name}}</p>
+    {{/each}}
+</form>
 
 <script>
 

@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
 </head>
 <body>
-<h1> Hello friend, log in below</h1>
-<form action="/user/login" method="post">
-    <lable>login</lable>
-    <p><input  name="login"></p>
-    <lable>Password</lable>
-    <p><input name="password"></p>
-    <button type="submit">Увійти</button>
+
+<form class="box" action="/auth/login" method="post">
+    <h1><p> Hello friend, log in below</p></h1>
+    <p><lable>login</lable></p>
+    <a><input  name="login"></a>
+    <p> <lable>Password</lable></p>
+    <a><input name="password"></a>
+    <button class="floating-button" type="submit">Log In</button>
 </form>
+<a class="floating-button" href="/create">Create New Account</a>
 </body>
 </html>

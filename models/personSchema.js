@@ -26,7 +26,14 @@ const DataBase = require('../connection')
             name: {
                 type:Sequelize.STRING,
                 allowNull:false
-            }
+            },
+            token: {
+                type:Sequelize.JSON,
+                allowNull:true
+
+        }
+
+
         }, {
             tableName: 'users',
             timestamps: false
@@ -39,8 +46,14 @@ User.hasMany(article, {foreignKey: 'UserID'});
 // User.beforeSync(() => console.log('b4 creating the article table'))
 // User.afterSync(() => console.log('b4 creating the article table'))
 // User.hasMany(article,{foreignKey:UserID});
-
-
 module.exports = User;
+
+
+// module.exports.comparePass = function (passFromUser, UserDBPass, callback){
+//     bcrypt.compare(passFromUser, UserDBPass, (err, IsMatch) => {
+//         if (err) throw err;
+//         callback();
+//     })
+// }
 
 
