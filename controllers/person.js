@@ -89,7 +89,6 @@ module.exports = {
 
             });
             if (!isPresent) throw  new Error('You are not register');
-           else if (isPresent.type !== 'admin') throw  new Error('You do not have permission to create an admin');
            else if (isPresent) throw new Error('You are already registered');
 
             const hashedPass = await hashPassword(password);
@@ -109,7 +108,21 @@ module.exports = {
                 msg: e.message
             })
         }
+    },
+    logOut : async (req,res) => {
+        try {
+            req.logOut();
+            res.redirect('/');
+
+        }catch (e){
+            console.log(e);
+            res.status(400).json({
+                success: false,
+                msg: e.message
+            })
+        }
     }
 }
+
 
 
